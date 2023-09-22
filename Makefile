@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 
 MODULE1=module-1/module1.py
+PORTFOLIO=portfolio-project/portfolio-project.py
 
 .PHONY: help
 help:
@@ -14,3 +15,7 @@ m1: ## executes module 1
 	@$(MODULE1) -t multiplication -n1 1.2 -n2 3.3
 	@$(MODULE1) -t division -n1 1.2 -n2 3.3
 	@echo "completed module 1."
+
+pp: ## executes portfolio project
+	@echo "executing portfolio project ..."
+	@$(PORTFOLIO)
