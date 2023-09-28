@@ -12,3 +12,7 @@ Fundamentals of Programming projects are found here.
 For more [information](./module-1/README.md).
 
 `make m1`
+
+## Module 3
+
+`make m3-d`
