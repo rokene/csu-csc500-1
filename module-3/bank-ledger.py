@@ -23,8 +23,7 @@ class BankLedger:
 
     def add_transaction(self, description: str, amount: float):
         self.balance = round(self.balance + amount, 2)
-        transaction = Transaction(datetime.now(), description, amount, self.balance)
-        self.transactions.append(transaction)
+        self.transactions.append(Transaction(datetime.now(), description, amount, self.balance))
 
         if amount < 0 and self.balance < 0:
             self.balance = round(self.balance - self.overdraft_fee, 2)
