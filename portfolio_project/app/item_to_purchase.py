@@ -7,9 +7,9 @@ class ItemToPurchase:
         item_quantity=0):
 
         self.item_name = item_name
-        self.item_price = float(item_price)
+        self.item_price = round(float(item_price), 2)
         self.item_quantity = int(item_quantity)
 
     def print_item_cost(self):
-        print(f'{self.item_name} {self.item_quantity} @ ${self.item_price} = ${self.item_price * self.item_quantity}')
+        print(f'{self.item_name} {self.item_quantity} @ ${self.item_price:.2f} = ${self.item_price * self.item_quantity:.2f}')
 

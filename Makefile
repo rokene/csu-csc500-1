@@ -1,10 +1,10 @@
 .DEFAULT_GOAL := help
 
 MODULE1=module-1/module1.py
-MODULE3D=module-3/bank-ledger.py
+MODULE3D=module-3/bank_ledger.py
 MODULE3=module-3/module3.py
 MODULE4D=module-4/factorial.py
-PORTFOLIO=portfolio-project/portfolio-project.py
+PORTFOLIO=portfolio_project/portfolio_project.py
 
 .PHONY: help
 help:
@@ -41,4 +41,5 @@ m4-d: ## executes module 4 discussion sample code
 
 pp: ## executes portfolio project
 	@echo "executing portfolio project ..."
-	@$(PORTFOLIO)
+	@$(PORTFOLIO) -f
+	@echo "executing portfolio project completed."
