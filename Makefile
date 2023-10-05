@@ -3,6 +3,7 @@
 MODULE1=module-1/module1.py
 MODULE3D=module-3/bank-ledger.py
 MODULE3=module-3/module3.py
+MODULE4D=module-4/factorial.py
 PORTFOLIO=portfolio-project/portfolio-project.py
 
 .PHONY: help
@@ -31,6 +32,12 @@ m3-d: ## executes module 3 discussion sample code
 	@echo "executing module 3 discussion code ..."
 	@$(MODULE3D)
 	@echo "completed module 3 discussion code."
+
+.PHONY: m4-d
+m4-d: ## executes module 4 discussion sample code
+	@echo "executing module 4 discussion code ..."
+	@$(MODULE4D)
+	@echo "completed module 4 discussion code."
 
 pp: ## executes portfolio project
 	@echo "executing portfolio project ..."
