@@ -26,3 +26,13 @@ For more [information](./module-3/README.md).
 This is the discussion sample code.
 
 `make m3-d`
+
+## Module 4
+
+This is the discussion sample code.
+
+`make m4-d`
+
+This is the Portfolio Project Milestone 1.
+
+`make pp`
