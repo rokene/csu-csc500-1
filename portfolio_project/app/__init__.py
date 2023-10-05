@@ -1,2 +1,2 @@
-from .item_to_purchase import ItemToPurchase
-from .prompt import UserPrompt
+from .ItemToPurchase import ItemToPurchase
+from .UserPrompt import UserPrompt

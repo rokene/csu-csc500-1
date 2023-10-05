@@ -10,14 +10,14 @@ global_config = {
 def main(args):
 
     if args.force:
-        print('warning: forcing confirmations.')
+        print('!! warning: forcing confirmations !!')
         global_config['force_confirmation'] = True
 
     items = []
     user_prompt = UserPrompt(global_config['force_confirmation'])
     num_items = 2
 
-    print(f"Please add {num_items} items.")
+    print(f"Starting application. Please add {num_items} items.")
 
     for i in range(num_items):
         item_number = i + 1
