@@ -39,7 +39,8 @@ m4-d: ## executes module 4 discussion sample code
 	@$(MODULE4D)
 	@echo "completed module 4 discussion code."
 
-pp: ## executes portfolio project
-	@echo "executing portfolio project ..."
+.PHONY: pp-m1
+pp-m1: ## executes the portfolio project milestone 1
+	@echo "executing portfolio project milestone 1 ..."
 	@$(PORTFOLIO) -f
-	@echo "executing portfolio project completed."
+	@echo "executing portfolio project milestone 1 completed."

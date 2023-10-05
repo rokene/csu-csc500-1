@@ -35,4 +35,4 @@ This is the discussion sample code.
 
 This is the Portfolio Project Milestone 1.
 
-`make pp`
+`make pp-m1`
