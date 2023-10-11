@@ -52,7 +52,7 @@ def avgRainfall():
     total_rainfall = 0.0
 
     for year in range(1, years + 1):
-        print(f"\nYear {year}")
+        print(f"Year {year}")
         for month in range(1, 13):
             monthly_rainfall = userInputFloat(f"Enter the inches of rainfall for month {month}: ", 0, None)
             total_rainfall += monthly_rainfall
