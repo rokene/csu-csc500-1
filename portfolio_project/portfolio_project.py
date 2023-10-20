@@ -110,7 +110,7 @@ def printMenu(ShoppingCart):
         elif user_choice == 'q':
             break
         else:
-            print(f"({user_choice}) is not a valid option!")
+            print(f"({user_choice}) is not a valid option! Try again.")
 
 def milestoneTwo():
     user_prompt = UserPrompt(global_config['force_confirmation'])
