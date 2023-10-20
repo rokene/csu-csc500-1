@@ -33,6 +33,24 @@ This is the discussion sample code.
 
 `make m4-d`
 
+## Module 5
+
+This is the discussion sample code.
+
+`make m5-d`
+
+This is the module 5 code.
+
+`make m5`
+
+## Module 6
+
+This is the discussion sample code.
+
+`make m6-d`
+
+## Portfolio Project
+
 This is the Portfolio Project Milestone 1.
 
 `make pp-m1`
