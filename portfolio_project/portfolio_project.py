@@ -141,6 +141,5 @@ if __name__ == "__main__":
                         choices=[1, 2],
                         required=True,
                         help="This indicates whether to run part 1 or part 2 of the milestones.")
-
     args = parser.parse_args()
     main(args)
