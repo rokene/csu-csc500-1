@@ -65,5 +65,11 @@ m6-d: ## executes module 6 discussion sample code
 .PHONY: pp-m1
 pp-m1: ## executes the portfolio project milestone 1
 	@echo "executing portfolio project milestone 1 ..."
-	@$(PORTFOLIO) -f
+	@$(PORTFOLIO) -f --part 1
 	@echo "executing portfolio project milestone 1 completed."
+
+.PHONY: pp-m2
+pp-m2: ## executes the portfolio project milestone 2
+	@echo "executing portfolio project milestone 2 ..."
+	@$(PORTFOLIO) -f --part 2
+	@echo "executing portfolio project milestone 2 completed."
