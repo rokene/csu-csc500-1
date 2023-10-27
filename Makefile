@@ -7,6 +7,7 @@ MODULE4D=module-4/factorial.py
 MODULE5D=module-5/discussion.py
 MODULE5=module-5/module5.py
 MODULE6D=module-6/discussion.py
+MODULE7=module-7/module7.py
 PORTFOLIO=portfolio_project/portfolio_project.py
 
 .PHONY: help
@@ -61,6 +62,12 @@ m6-d: ## executes module 6 discussion sample code
 	@echo "executing module 6 discussion code ..."
 	@$(MODULE6D)
 	@echo "completed module 6 discussion code."
+
+.PHONY: m7
+m7: ## executes module 7
+	@echo "executing module 7 ..."
+	@$(MODULE7)
+	@echo "completed module 7."
 
 .PHONY: pp-m1
 pp-m1: ## executes the portfolio project milestone 1
