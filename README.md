@@ -49,6 +49,18 @@ This is the discussion sample code.
 
 `make m6-d`
 
+## Module 7
+
+This is module 7 code.
+
+`make m7`
+
+## Module 8
+
+This is the discussion sample code.
+
+`make m8-d`
+
 ## Portfolio Project
 
 This is the Portfolio Project Milestone 1.
