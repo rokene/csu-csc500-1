@@ -15,15 +15,10 @@ class ShoppingCart:
                 return
         print("Item not found in cart. Nothing removed.")
 
-    def modifyItem(self, modify_item):
+    def modifyItem(self, item_name, item_qty):
         for item in self.cart_items:
-            if item.item_name == modify_item.item_name:
-                if modify_item.item_price != 0:
-                    item.item_price = modify_item.item_price
-                if modify_item.item_quantity != 0:
-                    item.item_quantity = modify_item.item_quantity
-                if modify_item.item_description:
-                    item.item_description = modify_item.item_description
+            if item.item_name == item_name:
+                item.item_quantity = item_qty
                 return
         print("Item not found in cart. Nothing modified.")
 

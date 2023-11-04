@@ -67,6 +67,6 @@ This is the Portfolio Project Milestone 1.
 
 `make pp-m1`
 
-This is the Portfolio Project Milestone 2.
+This is the Portfolio Project Milestone 2/Final Version
 
 `make pp-m2`

@@ -16,12 +16,12 @@ def milestoneOne():
 
     for i in range(num_items):
         item_number = i + 1
-        item_name = user_prompt.userInputStr(f"What is the name of item {item_number}? ")
+        item_name = user_prompt.userInputStr(f"What is the name of item {item_number}? ", None, None)
 
         while any(item.item_name == item_name for item in items):
             print("That item name already exists. Please enter a unique name. These are the names tht exist: ")
             [print(item.item_name) for item in items]
-            item_name = user_prompt.userInputStr(f"What is the name of item {item_number}? ")
+            item_name = user_prompt.userInputStr(f"What is the name of item {item_number}? ", None, None)
 
         item_quantity = user_prompt.userInputInt(f"How many {item_name}(s) do you want to add? ", None, None)
         item_cost = user_prompt.userInputFloat(f"How much does each {item_name} cost? ", None, None)
@@ -40,7 +40,7 @@ def milestoneOne():
 
 def createItem(item_names_list, uniqueName=True, exitOnFail=False):
     user_prompt = UserPrompt(global_config['force_confirmation'])
-    item_name = user_prompt.userInputStr(f"What is the name of item? ")
+    item_name = user_prompt.userInputStr(f"What is the name of item? ", None, None)
 
     if uniqueName:
         while any(name == item_name for name in item_names_list):
@@ -49,7 +49,7 @@ def createItem(item_names_list, uniqueName=True, exitOnFail=False):
                 return None
             print(f"Please enter a unique name that are not the following: ")
             [print(name) for name in item_names_list]
-            item_name = user_prompt.userInputStr(f"What is the name of item? ")
+            item_name = user_prompt.userInputStr(f"What is the name of item? ", None, None)
     else:
         while item_name not in item_names_list:
             print(f"The item name ({item_name}) does not exist.")
@@ -57,25 +57,25 @@ def createItem(item_names_list, uniqueName=True, exitOnFail=False):
                 return None
             print(f"Please enter a name that exists from the following: ")
             [print(name) for name in item_names_list]
-            item_name = user_prompt.userInputStr(f"What is the name of item? ")
+            item_name = user_prompt.userInputStr(f"What is the name of item? ", None, None)
 
     item_quantity = user_prompt.userInputInt(f"How many {item_name}(s) do you want to add? ", 0, None)
     item_cost = user_prompt.userInputFloat(f"How much does each {item_name} cost? ", 0, None)
-    item_description = user_prompt.userInputStr(f"What is the description of {item_name}? ")
+    item_description = user_prompt.userInputStr(f"What is the description of {item_name}? ", None, None)
     return ItemToPurchase(item_name, item_cost, item_quantity, item_description)
 
 def printMenu(ShoppingCart):
     user_choice = ''
     user_prompt = UserPrompt(global_config['force_confirmation'])
     while user_choice != 'q':
-        print("\nMENU")
+        print("\n######## MENU")
         print("a - Add item to cart")
         print("r - Remove item from cart")
         print("c - Change item quantity")
         print("i - Output items' descriptions")
         print("o - Output shopping cart")
         print("q - Quit")
-        user_choice = user_prompt.userInputStr("Choose an option:\n")
+        user_choice = user_prompt.userInputStr("Choose an option:\n", None, None)
         item_names_list = [item.item_name for item in ShoppingCart.cart_items]
 
         if user_choice == 'a':
@@ -90,7 +90,7 @@ def printMenu(ShoppingCart):
             else:
                 print("\nItems in cart:")
                 [print(name) for name in item_names_list]
-                name = user_prompt.userInputStr("Enter the item name:\n")
+                name = user_prompt.userInputStr("Enter the item name to be removed:\n", None, None)
                 ShoppingCart.removeItem(name)
         elif user_choice == 'c':
             if len(ShoppingCart.cart_items) <= 0:
@@ -98,9 +98,10 @@ def printMenu(ShoppingCart):
             else:
                 print("\nItems in cart:")
                 [print(name) for name in item_names_list]
-                item = createItem(item_names_list, False, True)
+                item_name = user_prompt.userInputStr("What is the name of item?\n", None, None)
+                item_qty = user_prompt.userInputInt("What is the desired new quantity?\n", 1, None)
                 if item:
-                    ShoppingCart.modifyItem(item)
+                    ShoppingCart.modifyItem(item_name, item_qty)
                 else:
                     print(f'No item modified.')
         elif user_choice == 'i':
@@ -114,8 +115,8 @@ def printMenu(ShoppingCart):
 
 def milestoneTwo():
     user_prompt = UserPrompt(global_config['force_confirmation'])
-    customer_name = user_prompt.userInputStr("Enter customer's name:\n")
-    current_date = user_prompt.userInputStr("Enter today's date:\n")
+    customer_name = user_prompt.userInputStr("Enter customer's name:\n", None, None)
+    current_date = user_prompt.userInputStr("Enter today's date:\n", None, None)
     cart = ShoppingCart(customer_name, current_date, global_config['force_confirmation'])
     printMenu(cart)
 
